@@ -1,9 +1,10 @@
-import React from 'react';
 //import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import SearchResults from './SearchResults/SearchResult';
 import SearchBar from './SearchBar/SearchBar';
 import Playlist from './Playlist/Playlist';
+import Spotify from '../util/spotify';
 
 let someTracks  = [
                     {name:'Automata', artist:'She', album:'Chroma',id:1},
@@ -46,7 +47,9 @@ class App extends React.Component {
   }
 
   search(term){
-    console.log(term);
+    Spotify.search(term).then(searchResults =>{
+      this.setState({SearchResults: searchResults});
+    })
 
   }
 
