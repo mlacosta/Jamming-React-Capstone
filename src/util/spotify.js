@@ -1,4 +1,4 @@
-let userToken = "";
+let userToken;
 let clientID = "4e9db861d2e64d499816846ae84be3c9";
 let URI = "http://localhost:3000/";
 
